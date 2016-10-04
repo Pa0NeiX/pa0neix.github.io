@@ -1,4 +1,4 @@
-var myPrettyCode = function() {
+
     /*var containers = document.getElementsByClassName('username_container');
     var username = document.getElementsByClassName('log_in6')[0].innerText;
     for(var i = 0; i < containers.length; i++)
@@ -9,4 +9,3 @@ var myPrettyCode = function() {
         }
     }*/
     alert("k");
-};
