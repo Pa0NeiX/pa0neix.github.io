@@ -1,4 +1,4 @@
-bool runOnce;
+var runOnce;
 if(runOnce == false)
 {
   alert('sup');
