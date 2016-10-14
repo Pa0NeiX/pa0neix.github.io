@@ -81,18 +81,22 @@ function removeImgSpam()
     if (typeof funcImgSpam != 'undefined')
         return;
 
-    var imgz = document.getElementsByTagName('img');
-    var imgg = [];
-    for (var i = 0; i < imgz.length; i++)
+    var comments = document.getElementsByTagName('blockquote');
+    for (var x = 0; x < comments.length; x++)
     {
-        imgg[i] = 0;
-        for (var k = 0; k < imgz.length; k++)
+        var imgz = comments[x].getElementsByTagName('img');
+        var imgg = [];
+        for (var i = 0; i < imgz.length; i++)
         {
-            if ((imgz[i].src == imgz[k].src) && imgz[i] != imgz[k])
+            imgg[i] = 0;
+            for (var k = 0; k < imgz.length; k++)
             {
-                imgg[i]++;
-                if (imgg[i] >= 3)
-                    imgz[i].remove();
+                if ((imgz[i].src == imgz[k].src) && imgz[i] != imgz[k])
+                {
+                    imgg[i]++;
+                    if (imgg[i] >= 3)
+                        imgz[i].remove();
+                }
             }
         }
     }
