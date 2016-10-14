@@ -14,37 +14,39 @@ function alreadySent(id) {
 }
 
 function adBlock() {
-    if (typeof funcBlock == 'undefined') {
-        iDetectAndRemove(document.getElementById('google_image_div'));
-        iDetectAndRemove(document.getElementById('newmav'));
+    if (typeof funcBlock != 'undefined')
+        return;
 
-        var iLink = document.getElementsByTagName('a');
-        for (var i = 0; i < iLink.length; i++) {
-            if (iLink[i].target == '_parent' && iLink[i].href == "http://bit.ly/2dZ647j") {
-                //iDetectAndRemove(iLink[i]);
-                iLink[i].remove();
-            }
-            if (iLink[i].target == '_blank') {
-                //iDetectAndRemove(iLink[i]);
-                iLink[i].remove();
-            }
-        }
+    iDetectAndRemove(document.getElementById('google_image_div'));
+    iDetectAndRemove(document.getElementById('newmav'));
 
-        var iFrames = document.getElementsByTagName('iframe');
-        for (var i = 0; i < iFrames.length; i++) {
-            //iFrames[i].remove();
-            iDetectAndRemove(iFrames[i]);
+    var iLink = document.getElementsByTagName('a');
+    for (var i = 0; i < iLink.length; i++) {
+        if (iLink[i].target == '_parent' && iLink[i].href == "http://bit.ly/2dZ647j") {
+            iDetectAndRemove(iLink[i]);
         }
-        alreadySent('funcBlock');
+        if (iLink[i].target == '_blank') {
+            iDetectAndRemove(iLink[i]);
+        }
     }
+
+    var iFrames = document.getElementsByTagName('iframe');
+    for (var i = 0; i < iFrames.length; i++) {
+        iDetectAndRemove(iFrames[i]);
+    }
+    alreadySent('funcBlock');
 }
 
 function removeExtra() {
-    if (document.URL == "https://www.fxp.co.il/") 
+    if (document.URL == 'https://www.fxp.co.il/') 
+        return;
+    if (typeof funcExtra != 'undefined') 
         return;
 
-    if (typeof funcExtra == 'undefined') {
-        iDetectAndRemove(document.getElementById('taboola-mobile-below-article-thumbnails'));  
-        alreadySent('funcExtra');
-    }
+    if (document.URL.includes('https://www.fxp.co.il/showthread.php?t='))
+        iDetectAndRemove(document.getElementById('taboola-mobile-below-article-thumbnails'));
+    else
+        iDetectAndRemove(document.getElementById('taboola-below-mobile-forum-thumbnails'));
+
+    alreadySent('funcExtra');
 }
