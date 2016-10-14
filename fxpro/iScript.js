@@ -43,6 +43,7 @@ function adBlock() {
             //iFrames[i].remove();
             iDetectAndRemove(iFrames[i]);
         }
+        alert('2');
         alreadySent('funcBlock');
     }
 }
