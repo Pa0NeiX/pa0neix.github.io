@@ -25,7 +25,7 @@ function adBlock() {
 
     var iLink = document.getElementsByTagName('a');
     for (var i = 0; i < iLink.length; i++) {
-        if (iLink[i].target == '_parent' && iLink[i].href == "http://bit.ly/2dZ647j" && !iLink[i].innerHTML.includes('src="//images.fxp.co.il/images3/logo-fxp-m.png"')) {
+        if (iLink[i].target == '_parent' && iLink[i].href == "http://bit.ly/2dZ647j") {
             iDetectAndRemove(iLink[i]);
         }
         if (iLink[i].target == '_blank') {
