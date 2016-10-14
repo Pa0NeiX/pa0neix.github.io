@@ -25,14 +25,18 @@ function adBlock() {
 
     var iLink = document.getElementsByTagName('a');
     for (var i = 0; i < iLink.length; i++) {
-        if (iLink[i].target == '_parent' && iLink[i].innerHTML.includes('i.imgur.com/xXevXW2.jpg')) {
-            iDetectAndRemove(iLink[i]);
-        }
         if (iLink[i].target == '_blank') {
             iDetectAndRemove(iLink[i]);
         }
     }
 
+    var iDiv = document.getElementsByTagName('div');
+    for(var i = 1; i < iDiv.length; i++) {
+        if(iDiv[i].innerHTML.includes('i.imgur.com/WJYjoAb.jpg')) { 
+           iDetectAndRemove(iDiv[i]);
+        }
+    }
+    
     var iFrames = document.getElementsByTagName('iframe');
     for (var i = 0; i < iFrames.length; i++) {
         iDetectAndRemove(iFrames[i]);
