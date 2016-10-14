@@ -1,14 +1,3 @@
-function detectAndRemove(rem) {
-    setTimeout(function () {
-        if (document.getElementById(rem) === null) {
-            detectAndRemove(rem);
-        }
-        else {
-            document.getElementById(rem).remove();
-        }
-    }, 420);
-}
-
 function iDetectAndRemove(rem) {
     setTimeout(function () {
         if (rem === null) {
@@ -21,20 +10,23 @@ function iDetectAndRemove(rem) {
 }
 
 function alreadySent(id) {
-    writeRidden = document.createElement('script'); writeRidden.type = 'text/javascript'; writeRidden.innerHTML = 'var ' + id + ' = true'; document.getElementsByTagName('head')[0].appendChild(writeRidden);
+    var writeRidden = document.createElement('script'); writeRidden.type = 'text/javascript'; writeRidden.innerHTML = 'var ' + id + ' = true'; document.getElementsByTagName('head')[0].appendChild(writeRidden);
 }
 
 function adBlock() {
     if (typeof funcBlock == 'undefined') {
         iDetectAndRemove(document.getElementById('google_image_div'));
+        iDetectAndRemove(document.getElementById('newmav'));
 
         var iLink = document.getElementsByTagName('a');
         for (var i = 0; i < iLink.length; i++) {
             if (iLink[i].target == '_parent' && iLink[i].href == "http://bit.ly/2dZ647j") {
-                iDetectAndRemove(iLink[i]);
+                //iDetectAndRemove(iLink[i]);
+                iLink[i].remove();
             }
             if (iLink[i].target == '_blank') {
-                iDetectAndRemove(iLink[i]);
+                //iDetectAndRemove(iLink[i]);
+                iLink[i].remove();
             }
         }
 
@@ -43,7 +35,6 @@ function adBlock() {
             //iFrames[i].remove();
             iDetectAndRemove(iFrames[i]);
         }
-        alert('2');
         alreadySent('funcBlock');
     }
 }
@@ -53,7 +44,7 @@ function removeExtra() {
         return;
 
     if (typeof funcExtra == 'undefined') {
-        iDetectAndRemove(document.getElementById('taboola-mobile-below-article-thumbnails'));
+        iDetectAndRemove(document.getElementById('taboola-mobile-below-article-thumbnails'));  
         alreadySent('funcExtra');
     }
 }
