@@ -18,7 +18,7 @@ function removeExtra() {
         return;
 
     if (typeof funcExtra == 'undefined') {
-        ('taboola-mobile-below-article-thumbnails');
+        detectAndRemove('taboola-mobile-below-article-thumbnails');
 
         for(var i = 0; i < document.getElementsByTagName('iframe').length; i++) { 
             document.getElementsByTagName('iframe')[i].remove(); 
