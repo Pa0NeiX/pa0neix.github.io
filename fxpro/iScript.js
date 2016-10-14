@@ -10,7 +10,10 @@ function iDetectAndRemove(rem) {
 }
 
 function alreadySent(id) {
-    var writeRidden = document.createElement('script'); writeRidden.type = 'text/javascript'; writeRidden.innerHTML = 'var ' + id + ' = true'; document.getElementsByTagName('head')[0].appendChild(writeRidden);
+    var writeRidden = document.createElement('script');
+    writeRidden.type = 'text/javascript';
+    writeRidden.innerHTML = 'var ' + id + ' = true';
+    document.getElementsByTagName('head')[0].appendChild(writeRidden);
 }
 
 function adBlock() {
