@@ -23,8 +23,6 @@ function removeExtra() {
         for(var i = 0; i < document.getElementsByTagName('iframe').length; i++) { 
             document.getElementsByTagName('iframe')[i].remove(); 
         }
-
-        alert('x');
         alreadySent('funcExtra');
     }
 }
