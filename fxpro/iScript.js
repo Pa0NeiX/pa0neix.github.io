@@ -65,7 +65,7 @@ function resizeImages()
 
     var iMages = document.getElementsByTagName('img');
     for (var i = 0; i < iMages.length; i++) {
-        if (iMages[i].height > 100) {
+        if (iMages[i].height > 1000) {
             iMages[i].style = 'height: 1000px; width: auto';
         }
     }
