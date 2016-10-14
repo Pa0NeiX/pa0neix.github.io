@@ -57,3 +57,16 @@ function removeExtra() {
 
     alreadySent('funcExtra');
 }
+
+function resizeImages()
+{
+    if (!document.URL.includes('https://www.fxp.co.il/showthread.php?t='))
+        return;
+
+    var iMages = document.getElementsByTagName('img');
+    for (var i = 0; i < iMages.length; i++) {
+        if (iMages[i].height > 100) {
+            iMages[i].style = 'height: 1000px; width: auto';
+        }
+    }
+}
