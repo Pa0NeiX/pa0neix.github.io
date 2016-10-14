@@ -25,7 +25,7 @@ function adBlock() {
 
     var iLink = document.getElementsByTagName('a');
     for (var i = 0; i < iLink.length; i++) {
-        if (iLink[i].target == '_parent' && iLink[i].href == "http://bit.ly/2dZ647j" && iLink[i].innerHTML.includes('i.imgur.com/xXevXW2.jpg')) {
+        if (iLink[i].target == '_parent' && iLink[i].innerHTML.includes('i.imgur.com/xXevXW2.jpg')) {
             iDetectAndRemove(iLink[i]);
         }
         if (iLink[i].target == '_blank') {
