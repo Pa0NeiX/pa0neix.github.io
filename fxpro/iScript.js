@@ -31,23 +31,24 @@ function adBlock() {
     }
 
     var iDiv = document.getElementsByTagName('div');
-    for(var i = 1; i < iDiv.length; i++) {
-        if(iDiv[i].innerHTML.includes('i.imgur.com/WJYjoAb.jpg')) { 
-           iDetectAndRemove(iDiv[i]);
+    for (var i = 1; i < iDiv.length; i++) {
+        if (iDiv[i].innerHTML.includes('i.imgur.com/WJYjoAb.jpg')) {
+            iDetectAndRemove(iDiv[i]);
         }
     }
-    
+
     var iFrames = document.getElementsByTagName('iframe');
     for (var i = 0; i < iFrames.length; i++) {
         iDetectAndRemove(iFrames[i]);
     }
+
     alreadySent('funcBlock');
 }
 
 function removeExtra() {
-    if (document.URL == 'https://www.fxp.co.il/') 
+    if (document.URL == 'https://www.fxp.co.il/')
         return;
-    if (typeof funcExtra != 'undefined') 
+    if (typeof funcExtra != 'undefined')
         return;
 
     if (document.URL.includes('https://www.fxp.co.il/showthread.php?t='))
@@ -58,9 +59,10 @@ function removeExtra() {
     alreadySent('funcExtra');
 }
 
-function resizeImages()
-{
+function resizeImages() {
     if (!document.URL.includes('https://www.fxp.co.il/showthread.php?t='))
+        return;
+    if (typeof funcImages != 'undefined')
         return;
 
     var iMages = document.getElementsByTagName('img');
@@ -69,4 +71,30 @@ function resizeImages()
             iMages[i].style = 'height: 1000px; width: auto';
         }
     }
+    alreadySent('funcImages');
+}
+
+function removeImgSpam()
+{
+    if (!document.URL.includes('https://www.fxp.co.il/showthread.php?t='))
+        return;
+    if (typeof funcImgSpam != 'undefined')
+        return;
+
+    var imgz = document.getElementsByTagName('img');
+    var imgg = [];
+    for (var i = 0; i < imgz.length; i++)
+    {
+        imgg[i] = 0;
+        for (var k = 0; k < imgz.length; k++)
+        {
+            if ((imgz[i].src == imgz[k].src) && imgz[i] != imgz[k])
+            {
+                imgg[i]++;
+                if (imgg[i] >= 3)
+                    imgz[i].remove();
+            }
+        }
+    }
+    alreadySent('funcImgSpam');
 }
