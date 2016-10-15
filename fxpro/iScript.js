@@ -102,3 +102,37 @@ function removeImgSpam()
     }
     alreadySent('funcImgSpam');
 }
+
+function changeSubNick(code) {
+    if (!document.URL.includes('https://www.fxp.co.il/showthread.php?t='))
+        return;
+    if (typeof funcSubNick != 'undefined')
+        return;
+
+    var nick;
+    var x = document.getElementsByClassName('header-sticky-wrapper');
+    for (var i = 0; i < x.length; i++) {
+        if (x[i].innerHTML.includes("member.php?u=")) {
+            nick = x[i].innerText;
+            nick = nick.replace("שלום ", "");
+            break;
+        }
+    }
+
+    setInterval(function () {
+        var comments = document.getElementsByClassName('xsaid');
+        for (var i = 0; i < comments.length; i++) {
+            if (comments[i].innerHTML.includes(nick)) {
+                document.getElementsByClassName('user_title')[i].innerHTML = code;
+            }
+        }
+    }, 420);
+    alreadySent('funcSubNick');
+}
+
+function nightMode() {
+    if (typeof funcNMode != 'undefined')
+        return;
+
+    alreadySent('funcNMode');
+}
