@@ -1,0 +1,85 @@
+Package: com.pnx.9gagpro
+Version: 1.1
+Architecture: iphoneos-arm
+Maintainer: pnx <pa0neix@gmail.com>
+Installed-Size: 200
+Depends: mobilesubstrate
+Filename: /deb/com.pnx.9gagpro_1.1_iphoneos-arm.deb
+Size: 5424
+MD5sum: 1da2876c31a5c9a06a4b51744c3a7fb8
+SHA1: 73d492e81216aeaee148669a152b343dcf4aee65
+SHA256: 0b2d5daa22d2a61d6f8dbc5e1bd71cf0521e560236953ac4041f8e3e0b673af8
+Section: Tweaks
+Priority: required
+Description: Allows you to use the 9GAG-Pro functions in settings.
+Tag: purpose::kext
+Author: pnx <pa0neix@gmail.com>
+Name: 9GAG Pro
+
+Package: com.pnx.cleandpkg
+Version: 1.1
+Architecture: iphoneos-arm
+Maintainer: pnx <pa0neix@gmail.com>
+Installed-Size: 4
+Filename: /deb/com.pnx.cleandpkg_1.1_iphoneos-arm.deb
+Size: 996
+MD5sum: 49b66b8c09ba7d015e384f3b67f098f1
+SHA1: 364b0f10e159c2a139d8ddbe588bfa85a25a602f
+SHA256: 08bf2bd5b960723a941bdda236d4d203608f21058e83ac80f09d0efb6bdf2973
+Section: Terminal Support
+Priority: required
+Description: Deleting .DS_Store files, checking files and etc...
+Tag: purpose::console, role::developer
+Author: pnx <pa0neix@gmail.com>
+Name: clean dpkg
+
+Package: com.pnx.extraicons
+Version: 1.0
+Architecture: iphoneos-arm
+Maintainer: pnx <pa0neix@gmail.com>
+Installed-Size: 50
+Filename: /deb/com.pnx.extraicons_1.0_iphoneos-arm.deb
+Size: 14536
+MD5sum: 763d63726c9be2aeab74bc0efe77829d
+SHA1: 40657be0752e4e1301d2980c5bc2f4766c3768c0
+SHA256: 2e91a3449f13ee47a52af42ac4a8942fdcec04634abd6ef2dd465877fb9ca5c8
+Section: Repositories
+Priority: required
+Description: Adds more icons to Cydognome packages.
+Name: Cydognome Icons
+Required: Yes
+
+Package: com.pnx.mkpackage
+Version: 1.1
+Architecture: iphoneos-arm
+Maintainer: pnx <pa0neix@gmail.com>
+Installed-Size: 4
+Filename: /deb/com.pnx.mkpackage_1.1_iphoneos-arm.deb
+Size: 1032
+MD5sum: 92b80d53db0c0cb3ef77b814186d50ae
+SHA1: 7fc113c9a83ad30140ce7a0e512dee3f104472f2
+SHA256: c536827dc5a5026643204f5d0a288a11c53d80a6bd4b37cfe5300ff3a68bbb4f
+Section: Terminal Support
+Priority: required
+Description: mkpackage allows you to make debian packages more easily.
+Tag: purpose::console, role::developer
+Author: pnx <pa0neix@gmail.com>
+Name: mkpackage
+
+Package: com.pnx.bwm
+Version: 1.0
+Architecture: iphoneos-arm
+Maintainer: pnx <pa0neix@gmail.com>
+Installed-Size: 152
+Depends: winterboard
+Filename: deb/bwm.deb
+Size: 14136
+MD5sum: dff751930a571570eeab4d5df08ff2bd
+SHA1: c5403e13e395f65fd302383ee812cde8ca75010d
+SHA256: bde705b03608a34632a6cf214c570a04fc6fef0edbd1496fedb9baedbb8aa878
+Section: Themes
+Description: Replace the green (own) messages to blue.
+Author: pnx <pa0neix@gmail.com>
+Depiction: https://pa0neix.github.io/repo/description/blue-whatsapp-messages/
+Name: Blue Whatsapp Messages
+
