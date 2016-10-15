@@ -3,10 +3,11 @@ permalink: /404.html
 ---
 
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset=utf-8>
-    <title>Redirecting...</title>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>404 - תבין לבד...</title>
     <style>
         body {
             background-color: black;
@@ -39,8 +40,8 @@ permalink: /404.html
         }
 
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <div style="position: fixed; z-index: -99; width: 100%; height: 100%">
         <iframe frameborder="0" style="height: 100%; width: 100%" src="https://www.youtube.com/embed/YuxtSCp1LiA?autoplay=1&controls=0&showinfo=0&loop=1"></iframe>
     </div>
@@ -49,6 +50,5 @@ permalink: /404.html
         <h1>404</h1>
         <h2>עכשיו תראה סבתא שעושה צלחות</h2>
     </div>
-    <script>var n=location.href.replace("index.php?/", "");if (n!=location.href)location=n;</script>
-  </body>
+</body>
 </html>
