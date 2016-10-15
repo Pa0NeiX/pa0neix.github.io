@@ -8,12 +8,7 @@ permalink: /404.html
     <meta charset="utf-8" />
     <title>404 - תבין לבד...</title>
 	<script src="/js/succinjector.js" type="text/javascript"></script>
-
-    <script>
-        InjectSucc('link', 'shortcut icon', '/favicon.png');
-        InjectSucc('link', 'apple-touch-icon', '/favicon.png');
-        InjectSucc('link', 'apple-touch-startup-image', '/startup.png');
-    </script>
+	<script src="/js/injectDefaults.js" type="text/javascript"></script>
 
     <style>
         body {
