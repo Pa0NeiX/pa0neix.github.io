@@ -7,10 +7,14 @@ permalink: /404.html
 <head>
     <meta charset="utf-8" />
     <title>404 - תבין לבד...</title>
-    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="/favicon.png" />
-    <meta name="application-name" content="pnx github" />
-    <link rel="apple-touch-startup-image" href="/startup.png">
+	<script src="/js/succinjector.js" type="text/javascript"></script>
+
+    <script>
+        InjectSucc('link', 'shortcut icon', '/favicon.png');
+        InjectSucc('link', 'apple-touch-icon', '/favicon.png');
+        InjectSucc('link', 'apple-touch-startup-image', '/startup.png');
+    </script>
+
     <style>
         body {
             background-color: black;
