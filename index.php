@@ -3,7 +3,6 @@ permalink: /404.html
 ---
 
 <!DOCTYPE html>
-
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -45,7 +44,7 @@ permalink: /404.html
     <div style="position: fixed; z-index: -99; width: 100%; height: 100%">
         <iframe frameborder="0" style="height: 100%; width: 100%" src="https://www.youtube.com/embed/YuxtSCp1LiA?autoplay=1&controls=0&showinfo=0&loop=1"></iframe>
     </div>
-    <!-- <div class="blocker"></div>-->
+   <div class="blocker"></div>
     <div class="note">
         <h1>404</h1>
         <h2>עכשיו תראה סבתא שעושה צלחות</h2>
