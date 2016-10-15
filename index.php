@@ -7,6 +7,10 @@ permalink: /404.html
 <head>
     <meta charset="utf-8" />
     <title>404 - תבין לבד...</title>
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <meta name="application-name" content="pnx github" />
+    <link rel="apple-touch-startup-image" href="/startup.png">
     <style>
         body {
             background-color: black;
@@ -44,7 +48,7 @@ permalink: /404.html
     <div style="position: fixed; z-index: -99; width: 100%; height: 100%">
         <iframe frameborder="0" style="height: 100%; width: 100%" src="https://www.youtube.com/embed/YuxtSCp1LiA?autoplay=1&controls=0&showinfo=0&loop=1"></iframe>
     </div>
-   <div class="blocker"></div>
+    <!-- <div class="blocker"></div>-->
     <div class="note">
         <h1>404</h1>
         <h2>עכשיו תראה סבתא שעושה צלחות</h2>
