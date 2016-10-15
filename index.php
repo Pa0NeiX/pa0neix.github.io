@@ -8,7 +8,7 @@ permalink: /404.html
     <meta charset=utf-8>
     <title>Redirecting...</title>
     <link rel=canonical href="http://www.lunesu.com/index.html">
-    <meta http-equiv=refresh content="1; url=http://www.lunesu.com/index.html">
+    <meta http-equiv=refresh content="1; url=/notfound.html">
   </head>
   <body>
     <h1>Redirecting...</h1>
