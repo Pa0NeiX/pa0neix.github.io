@@ -3,7 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Flip text</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -96,7 +96,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             request = new XMLHttpRequest;
-            request.open('GET', 'http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=' + "Counter Strike Global Offensive", true);
+            request.open('GET', 'http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=Counter Strike Global Offensive', true);
             request.onload = function () {
                 if (request.status >= 200 && request.status < 400) {
                     data = JSON.parse(request.responseText).data.image_url;
