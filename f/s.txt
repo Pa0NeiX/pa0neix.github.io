@@ -6,7 +6,7 @@
     <title>FxPBot - Liker</title>
     <style>
         html {
-            cursor: url(/*'Pointer.cur'*/'http://pnx.esy.es/res/Pointer.cur'), auto;
+            cursor: url('Pointer.cur'), auto;
             overflow: hidden;
         }
         body {
@@ -62,7 +62,7 @@
             border-radius: 10px;
             outline: none;
             transition: 0.5s;
-            cursor: url(/*'Link Select.cur'*/'http://pnx.esy.es/res/Pointer.cur'), auto;
+            cursor: url('Link Select.cur'), auto;
         }
         button:hover {
             color: black;
@@ -187,7 +187,7 @@
 <body>
     <p class="console">Console Loaded</p>
     <div class="body">
-        <img src="http://i.imgur.com/r4Tnwvu.png" width="128" height="128" />
+        <img src="heart.png" width="128" height="128" />
         <p id="status"></p>
         <div class="progress_bar">
             <div class="status" style="color: red"></div>
