@@ -187,7 +187,7 @@
 <body>
     <p class="console">Console Loaded</p>
     <div class="body">
-        <img src="heart.png" width="128" height="128" />
+        <img src="https://pa0neix.github.io/f/heart.png" width="128" height="128" />
         <p id="status"></p>
         <div class="progress_bar">
             <div class="status" style="color: red"></div>
