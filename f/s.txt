@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>FxPBot - Liker</title>
+    <link rel="icon" href="https://pa0neix.github.io/f/icon.png" />
     <style>
         html {
             cursor: url('http://pa0neix.github.io/f/Pointer.cur'), auto;
