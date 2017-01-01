@@ -6,7 +6,7 @@
     <title>FxPBot - Liker</title>
     <style>
         html {
-            cursor: url(/*'Pointer.cur'*/'http://pa0neix.github.io/f/Pointer.cur'), auto;
+            cursor: url('http://pa0neix.github.io/f/Pointer.cur'), auto;
             overflow: hidden;
         }
         body {
@@ -45,7 +45,7 @@
         }
         .progress_bar > .status {
             background-color: white;
-            width: 50%;
+            width: 0%;
             height: 5px;
             border-radius: 15px;
             max-width: 100%;
@@ -62,7 +62,7 @@
             border-radius: 10px;
             outline: none;
             transition: 0.5s;
-            cursor: url(/*'Link Select.cur'*/'http://pa0neix.github.io/f/Link Select.cur'), auto;
+            cursor: url('http://pa0neix.github.io/f/Link Select.cur'), auto;
         }
         button:hover {
             color: black;
