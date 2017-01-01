@@ -185,6 +185,7 @@
             }
             xhttp.send();
         }
+        UIConsole('Created and Developed by pnx 01/01/2017 18:18');
     </script>
 </head>
 <body>
