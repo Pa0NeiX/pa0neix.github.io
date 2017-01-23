@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Jailbreak (iOS Device) Downloader</title>
+    <link href="style.css" rel="stylesheet" />
+    <script>
+        function getVal(str) {
+            var v = window.location.search.match(new RegExp('(?:[\?\&]' + str + '=)([^&]+)'));
+            return v ? v[1] : null;
+        }
+        var iOS = getVal('id');
+        window.onload = function () {
+            var xhttp = new XMLHttpRequest();
+            xhttp.open('GET', 'list.json', true);
+            xhttp.send();
+            xhttp.onreadystatechange = function () {
+                if (xhttp.status == 200 && xhttp.readyState == 4) {
+                    var js0n = JSON.parse(xhttp.responseText);
+                    for (var i = 1; i < Object.keys(js0n).length + 1; i++) {
+                        var tmp = document.createElement('li');
+                        tmp.id = i;
+                        tmp.innerText = js0n[i].from + ' - ' + js0n[i].to;
+                        tmp.addEventListener('click', function () { location.href = '?id=' + this.id });
+                        document.querySelector('.jailbreakList > ul').insertBefore(tmp, document.querySelectorAll('.jailbreakList > ul > li')[0]);
+                    }
+                    if (!js0n[iOS]) {
+                        document.querySelector('.version').innerText = 'No jailbreak detected.';
+                        document.querySelector('.description').innerText = 'Please select your version from the list.';
+                        return;
+                    }
+                    
+                    var isTethered = 0, notes = '';
+                    switch (js0n[iOS].tethered) {
+                        case 0:
+                            isTethered = 'untethered';
+                            break;
+                        case 1:
+                            isTethered = 'tethered';
+                            break;
+                        case 2:
+                            isTethered = 'half-tethered';
+                            break;
+                    }
+                    document.querySelector('.version').innerText = js0n[iOS].from + ' - ' + js0n[iOS].to;
+                    document.querySelector('.description').innerHTML = 'Created by ' + js0n[iOS].team + ' (<a href=' + js0n[iOS].teamUrl + '>' + js0n[iOS].teamUrl + '</a>), ' + isTethered + '.\n' + js0n[iOS].notes;
+                    document.querySelector('.icon').src = "img/" + js0n[iOS].team + ".png";
+                    document.querySelector('.download').addEventListener('click', function () { console.log(js0n[iOS].downloadd) });
+                    //document.querySelector('.download').onclick = 'window.location.href = '+js0n[iOS].download;
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <div class="Background"></div>
+    <div class="Foreground">
+        <h1>Jailbreak Download</h1>
+        <p>Created by pnx © 2016 http://www.pa0neix.github.io/</p>
+    </div>
+    
+    <div class="box">
+        <div class="upperCase">
+            <p class="title">Select Version</p>
+        </div>
+        <div class="centerCase">
+            <img class="icon" src="" />
+            <p class="version"></p>
+            <p class="description"></p>
+        </div>
+        <div class="jailbreakList"><ul></ul></div>
+        <div class="lowerCase">
+            <p class="highlights">Some highlights:</p>
+            <p class="notice">Do NOT install untrusted packages from another sources, is for your own good.</p>
+            <input type="submit" class="download" value="Download" />
+        </div>
+    </div>
+</body>
+</html>
