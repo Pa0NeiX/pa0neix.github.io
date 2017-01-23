@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -46,7 +46,7 @@
                     document.querySelector('.version').innerText = js0n[iOS].from + ' - ' + js0n[iOS].to;
                     document.querySelector('.description').innerHTML = 'Created by ' + js0n[iOS].team + ' (<a href=' + js0n[iOS].teamUrl + '>' + js0n[iOS].teamUrl + '</a>), ' + isTethered + '.\n' + js0n[iOS].notes;
                     document.querySelector('.icon').src = "img/" + js0n[iOS].team + ".png";
-                    document.querySelector('.download').addEventListener('click', function () { console.log(js0n[iOS].downloadd) });
+                    document.querySelector('.download').addEventListener('click', function () { location.href = js0n[iOS].download });
                     //document.querySelector('.download').onclick = 'window.location.href = '+js0n[iOS].download;
                 }
             }
