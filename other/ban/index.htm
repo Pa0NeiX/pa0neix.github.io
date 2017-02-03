@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>erez</title>
+    <style>
+    body {
+        overflow: hidden;
+    }
+    @keyframes flip {
+        from { transform: rotate(0deg) }
+        to { transform: rotate(360deg) }
+    }
+    </style>
+    <script>
+        document.write('<body></body>')
+        window.onload = rapeWomans();
+        function smexMe(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        function rapeWomans() {
+            setInterval(function () {
+                for (var i = 0; i < 5; i++) {
+                    var av = new Audio;
+                    av.src = 'Ban.mp3';
+                    av.play();
+                }
+                if (smexMe(0, 100) <= 10) {
+                    var txt = document.createElement('h1');
+                    txt.innerText = 'ban';
+                    txt.style.color = 'red'
+                    txt.style.fontSize = smexMe(50, 150) + 'px';
+                    txt.style.position = 'absolute';
+                    txt.style.top = smexMe(0, screen.height) + 'px';
+                    txt.style.left = smexMe(0, screen.width) + 'px';
+                    txt.style.animation = 'flip 0.' + smexMe(8, 9) + 's linear infinite';
+                    document.body.append(txt);
+                } else {
+                    var img = document.createElement('img');
+                    img.src = smexMe(1, 2) + '.png';
+                    img.style.position = 'absolute';
+                    img.style.top = smexMe(0, screen.height) + 'px';
+                    img.style.left = smexMe(0, screen.width) + 'px';
+                    img.style.height = smexMe(150, 250) + 'px';
+                    img.style.animation = 'flip 0.' + smexMe(250, 500) + 's linear infinite';
+                    document.body.append(img);
+                }
+            }, 100)
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
