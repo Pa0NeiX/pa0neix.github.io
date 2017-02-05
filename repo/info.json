@@ -1,0 +1,16 @@
+﻿{
+    "FxPhone": [
+        {
+            "PlainText": "טוב",
+            "ScreenShots": [
+				"1"
+            ]
+        },
+		{
+            "PlainText": "dsa",
+            "ScreenShots": [
+				"1", "http://google.com"
+            ]
+        }
+    ]
+}
