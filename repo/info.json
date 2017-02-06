@@ -1,15 +1,9 @@
-﻿{
+{
     "FxPhone": [
         {
-            "PlainText": "טוב",
+            "PlainText": "תוסף עבור אפליקציית FXP",
             "ScreenShots": [
-				"1"
-            ]
-        },
-		{
-            "PlainText": "dsa",
-            "ScreenShots": [
-				"1", "http://google.com"
+		"http://i.imgur.com/nlsJ7fR.png"
             ]
         }
     ]
