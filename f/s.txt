@@ -1,233 +1,244 @@
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title>FxPBot - Liker</title>
-    <link rel="icon" href="https://pa0neix.github.io/f/icon.png" />
-    <style>
-        html {
-            cursor: url('http://pa0neix.github.io/f/Pointer.cur'), auto;
-            overflow: hidden;
-        }
-
-        body {
-            background-color: black;
-        }
-
-        .body {
-            background-color: black;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            width: 30%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-family: 'Myriad Pro';
-        }
-
-            .body > p {
-                text-align: center;
-            }
-
-        img {
-            position: relative;
-            left: 50%;
-            width: 128px;
-            height: auto;
-            transform: translateX(-50%);
-            transition: 0.5s;
-        }
-
-            img:hover {
-                width: calc(148px);
-                transition: 0.5s;
-            }
-
-        .progress_bar {
-            background-color: #4d4d4d;
-            width: 100%;
-            height: 5px;
-            border-radius: 20px;
-        }
-
-            .progress_bar > .status {
-                background-color: white;
-                width: 0%;
-                height: 5px;
-                border-radius: 15px;
-                max-width: 100%;
-                transition: 0.5s ease;
-            }
-
-        button {
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 12px 50px;
-            color: white;
-            background-color: black;
-            border: 2px solid white;
-            border-radius: 10px;
-            outline: none;
-            transition: 0.5s;
-            cursor: url('http://pa0neix.github.io/f/Link Select.cur'), auto;
-        }
-
-            button:hover {
-                color: black;
-                background-color: white;
-                transition: 0.5s;
-            }
-
-        .console {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            font-family: 'Lucida Console';
-            font-size: 12px;
-            color: white;
-            filter: blur(1px);
-        }
-
-        input[type=text] {
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 8px 50px;
-            color: white;
-            background-color: black;
-            border: 2px solid white;
-            border-radius: 10px;
-            outline: none;
-            transition: 0.5s;
-        }
-        input[type=text]:hover {
-            padding: 12px 50px;
-        }
-        input[type=text]:focus {
-            box-shadow: 0 0 10px white;
-        }
-    </style>
-    <script>
-        function UIConsole(text) {
-            document.querySelector('.console').innerText = document.querySelector('.console').innerText + '\n' + text;
-        }
-        function getInfo(xhttp, element) {
-            return xhttp.responseXML.querySelector(element).innerText;
-        }
-        (function () {
-            var xhttp = new XMLHttpRequest();
-            xhttp.responseType = 'document';
-            xhttp.open('GET', 'https://www.fxp.co.il/', true);
-            xhttp.send();
-            xhttp.onreadystatechange = function () {
-                if (xhttp.readyState == 4 & xhttp.status == 200) {
-                    xhttp.open('GET', xhttp.responseXML.querySelector('.log_in6').querySelector('a').href + '&tab=aboutme', true);
-                    xhttp.send();
-                    xhttp.onreadystatechange = function () {
-                        function getInfo(element, item = 0) {
-                            if(element.includes('#profilefield'))
-                                return xhttp.responseXML.querySelectorAll(element)[item].innerText.match(/.*\n\n/g,'')[0].replace(/\n/g,'');
-                            else
-                                return xhttp.responseXML.querySelectorAll(element)[item].innerText;
-                        }
-                            function ft(arr) {
-                                return arr.match(/.*\n\n/g,'')[0].replace(/\n/g,'');
-                            }
-                            if (xhttp.readyState == 4 & xhttp.status == 200) {
-                                UIConsole('/*/ -------------- /*/');
-                                UIConsole('User: ' + getInfo('.member_username'));
-                                UIConsole('Rank: ' + getInfo('.usertitle'));
-                                UIConsole('Messages: ' + getInfo('.blockrow.stats dd', 1));
-                                UIConsole('Messages-per-day: ' + getInfo('.blockrow.stats dd', 2));
-                                UIConsole('Name: ' + getInfo('#profilefield_value_2'));
-                                UIConsole('Age: ' + getInfo('.stats.agerow dd'));
-                                UIConsole('Biography: ' + getInfo('#profilefield_value_1'));
-                                UIConsole('Interests: ' + getInfo('#profilefield_value_3'));
-                                UIConsole('Profession: ' + getInfo('#profilefield_value_4'));
-                                UIConsole('Sex: ' + getInfo('#profilefield_value_6'));
-                                UIConsole('Sexual-Status: ' + getInfo('#profilefield_value_7'));
-                                UIConsole('Interests in: ' + getInfo('#profilefield_value_8'));
-                                UIConsole('Living area: ' + getInfo('#profilefield_value_10'));
-                                UIConsole('City: ' + getInfo('#profilefield_value_11'));
-                                UIConsole('Friend messages: ' + getInfo('.blockrow.stats dd', 3));
-                                UIConsole('Last-friend-message: ' + getInfo('.blockrow.stats dd', 4));
-                                UIConsole('Last-activity: ' + getInfo('.blockrow.stats dd', 5));
-                                UIConsole('Register-date: ' + getInfo('.blockrow.stats dd', 6));
-                                UIConsole('Homepage: ' + getInfo('.blockrow.stats dd', 7));
-                                UIConsole('/*/ -------------- /*/');
-                            }
-                        }
-                    }
-                }
-            })();
-
-            function setProgressBar(value) {
-                document.querySelector('.status').style.width = value + '%';
-            }
-
-            function addLike(postid) {
-                var xlist = new FormData();
-                xlist.append('do', 'add_like');
-                xlist.append('postid', postid);
-                xlist.append('fxppro', '');
-                xlist.append('securitytoken', SECURITYTOKEN);
-                count++;
-                var xhttp = new XMLHttpRequest();
-                xhttp.open('POST', 'https://www.fxp.co.il/ajax.php', false);
-                xhttp.send(xlist);
-            }
-
-            var countDooku = 0, count = 0, max = 0;
-            function sendDelayedLike(postid) {
-                setTimeout(function () {
-                    addLike(postid);
-                    setProgressBar(count / max * 100);
-                    document.querySelector('#status').innerText = 'PostID: ' + postid + ', ' + count + '/' + max;
-                    console.log("%cLike: %c"+postid, 'color: #00ffa9', 'text-shadow: 0 0 1px black; color: black');
-                }, countDooku++ * 500);
-            }
-
-            function listToString(str) {
-                str = str.split(',');
-                max = str.length;
-                for (var i = 0; i < str.length; i++)
-                    sendDelayedLike(str[i]);
-            }
-
-            function butt() {
-                var xhttp = new XMLHttpRequest();
-                xhttp.open('GET', 'https://www.fxp.co.il/alllikes.php', true);
-                xhttp.responseType = 'document';
-                xhttp.onreadystatechange = function() {
-                    if(xhttp.readyState == 4 && xhttp.status == 200) {
-                        var list = [];
-                        var li = xhttp.responseXML.querySelectorAll('ul')[9].querySelectorAll('.noti_fi');
-                        for (var i = 0; i < li.length; i++)
-                            list.push(li[i].innerHTML.match(/post.*?"/g)[0].replace(/post|"/g, ''));
-                        //listToString('\'' + list.toString() + '\'');
-                        listToString(list.toString());
-                        document.querySelector('button').style.opacity = 0.0;
-                    }
-                }
-                xhttp.send();
-            }
-    </script>
-</head>
-<body>
-    <p class="console">Console Loaded</p>
-    <div class="body">
-        <img src="http://i.imgur.com/r4Tnwvu.png" width="128" height="128" />
-        <p id="status"></p>
-        <div class="progress_bar">
-            <div class="status" style="color: red"></div>
-        </div>
-        <br />
-        <button onclick="butt()">Boost Mine</button><br style="line-height: 70px" />
-        <input id="otherlist" type="text" placeholder="pattern" /><br style="line-height: 30px" />
-        <button onclick="listToString(document.querySelector('#otherlist').value)">Boost Other</button><br />
-    </div>
-</body>
-</html>
+<!--  __________   ___    _  __    __ -->
+<!-- |  ______  | |   \  | | \ \  / /  --->
+<!-- | |______| | | |\ \ | |  \ \/ /  ----->
+<!-- |  ________| | | \ \| |  / /\ \   --->
+<!-- | |          |_|  \___| /_/  \_\ -->
+<!-- | | -->
+<!-- | | -->
+<!-- | | -->
+<!-- | | --> <!DOCTYPE html>
+<!-- | | --> <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- | | --> <head>
+<!-- | | -->     <meta charset="utf-8" />
+<!-- | | -->     <title>FxPBot - Liker</title>
+<!-- | | -->     <link rel="icon" href="https://pa0neix.github.io/f/icon.png" />
+<!-- | | -->     <style>
+/*   | | */         html {
+/*   | | */             cursor: url('http://pa0neix.github.io/f/Pointer.cur'), auto;
+/*   | | */             overflow: hidden;
+/*   | | */         }
+/*   | | */ 
+/*   | | */         body {
+/*   | | */             background-color: black;
+/*   | | */         }
+/*   | | */ 
+/*   | | */         .body {
+/*   | | */             background-color: black;
+/*   | | */             position: fixed;
+/*   | | */             top: 50%;
+/*   | | */             left: 50%;
+/*   | | */             width: 30%;
+/*   | | */             transform: translate(-50%, -50%);
+/*   | | */             color: white;
+/*   | | */             font-family: 'Myriad Pro';
+/*   | | */         }
+/*   | | */ 
+/*   | | */             .body > p {
+/*   | | */                 text-align: center;
+/*   | | */             }
+/*   | | */ 
+/*   | | */         img {
+/*   | | */             position: relative;
+/*   | | */             left: 50%;
+/*   | | */             width: 128px;
+/*   | | */             height: auto;
+/*   | | */             transform: translateX(-50%);
+/*   | | */             transition: 0.5s;
+/*   | | */         }
+/*   | | */ 
+/*   | | */             img:hover {
+/*   | | */                 width: calc(148px);
+/*   | | */                 transition: 0.5s;
+/*   | | */             }
+/*   | | */ 
+/*   | | */         .progress_bar {
+/*   | | */             background-color: #4d4d4d;
+/*   | | */             width: 100%;
+/*   | | */             height: 5px;
+/*   | | */             border-radius: 20px;
+/*   | | */         }
+/*   | | */ 
+/*   | | */             .progress_bar > .status {
+/*   | | */                 background-color: white;
+/*   | | */                 width: 0%;
+/*   | | */                 height: 5px;
+/*   | | */                 border-radius: 15px;
+/*   | | */                 max-width: 100%;
+/*   | | */                 transition: 0.5s ease;
+/*   | | */             }
+/*   | | */ 
+/*   | | */         button {
+/*   | | */             position: relative;
+/*   | | */             left: 50%;
+/*   | | */             transform: translateX(-50%);
+/*   | | */             padding: 12px 50px;
+/*   | | */             color: white;
+/*   | | */             background-color: black;
+/*   | | */             border: 2px solid white;
+/*   | | */             border-radius: 10px;
+/*   | | */             outline: none;
+/*   | | */             transition: 0.5s;
+/*   | | */             cursor: url('http://pa0neix.github.io/f/Link Select.cur'), auto;
+/*   | | */         }
+/*   | | */ 
+/*   | | */             button:hover {
+/*   | | */                 color: black;
+/*   | | */                 background-color: white;
+/*   | | */                 transition: 0.5s;
+/*   | | */             }
+/*   | | */ 
+/*   | | */         .console {
+/*   | | */             position: absolute;
+/*   | | */             top: 0;
+/*   | | */             left: 0;
+/*   | | */             width: 100%;
+/*   | | */             height: 100%;
+/*   | | */             font-family: 'Lucida Console';
+/*   | | */             font-size: 12px;
+/*   | | */             color: white;
+/*   | | */             filter: blur(1px);
+/*   | | */         }
+/*   | | */ 
+/*   | | */         input[type=text] {
+/*   | | */             position: relative;
+/*   | | */             left: 50%;
+/*   | | */             transform: translateX(-50%);
+/*   | | */             padding: 8px 50px;
+/*   | | */             color: white;
+/*   | | */             background-color: black;
+/*   | | */             border: 2px solid white;
+/*   | | */             border-radius: 10px;
+/*   | | */             outline: none;
+/*   | | */             transition: 0.5s;
+/*   | | */         }
+/*   | | */ 
+/*   | | */             input[type=text]:hover {
+/*   | | */                 padding: 12px 50px;
+/*   | | */             }
+/*   | | */ 
+/*   | | */             input[type=text]:focus {
+/*   | | */                 box-shadow: 0 0 10px white;
+/*   | | */             }
+/*   | | */     </style>
+/*   | | */     <script>
+/*   | | */         function UIConsole(text) {
+/*   | | */             document.querySelector('.console').innerText = document.querySelector('.console').innerText + '\n' + text;
+/*   | | */         }
+/*   | | */         function getInfo(xhttp, element) {
+/*   | | */             return xhttp.responseXML.querySelector(element).innerText;
+/*   | | */         }
+/*   | | */         (function () {
+/*   | | */             var xhttp = new XMLHttpRequest();
+/*   | | */             xhttp.responseType = 'document';
+/*   | | */             xhttp.open('GET', 'https://www.fxp.co.il/', true);
+/*   | | */             xhttp.send();
+/*   | | */             xhttp.onreadystatechange = function () {
+/*   | | */                 if (xhttp.readyState == 4 & xhttp.status == 200) {
+/*   | | */                     xhttp.open('GET', xhttp.responseXML.querySelector('.log_in6').querySelector('a').href + '&tab=aboutme', true);
+/*   | | */                     xhttp.send();
+/*   | | */                     xhttp.onreadystatechange = function () {
+/*   | | */                         function getInfo(element, item = 0) {
+/*   | | */                             if(element.includes('#profilefield'))
+/*   | | */                                 return xhttp.responseXML.querySelectorAll(element)[item].innerText.match(/.*\n\n/g,'')[0].replace(/\n/g,'');
+/*   | | */                             else
+/*   | | */                                 return xhttp.responseXML.querySelectorAll(element)[item].innerText;
+/*   | | */                         }
+/*   | | */                             function ft(arr) {
+/*   | | */                                 return arr.match(/.*\n\n/g,'')[0].replace(/\n/g,'');
+/*   | | */                             }
+/*   | | */                             if (xhttp.readyState == 4 & xhttp.status == 200) {
+/*   | | */                                 UIConsole('/*/ -------------- /*/');
+/*   | | */                                 UIConsole('User: ' + getInfo('.member_username'));
+/*   | | */                                 UIConsole('Rank: ' + getInfo('.usertitle'));
+/*   | | */                                 UIConsole('Messages: ' + getInfo('.blockrow.stats dd', 1));
+/*   | | */                                 UIConsole('Messages-per-day: ' + getInfo('.blockrow.stats dd', 2));
+/*   | | */                                 UIConsole('Name: ' + getInfo('#profilefield_value_2'));
+/*   | | */                                 UIConsole('Age: ' + getInfo('.stats.agerow dd'));
+/*   | | */                                 UIConsole('Biography: ' + getInfo('#profilefield_value_1'));
+/*   | | */                                 UIConsole('Interests: ' + getInfo('#profilefield_value_3'));
+/*   | | */                                 UIConsole('Profession: ' + getInfo('#profilefield_value_4'));
+/*   | | */                                 UIConsole('Sex: ' + getInfo('#profilefield_value_6'));
+/*   | | */                                 UIConsole('Sexual-Status: ' + getInfo('#profilefield_value_7'));
+/*   | | */                                 UIConsole('Interests in: ' + getInfo('#profilefield_value_8'));
+/*   | | */                                 UIConsole('Living area: ' + getInfo('#profilefield_value_10'));
+/*   | | */                                 UIConsole('City: ' + getInfo('#profilefield_value_11'));
+/*   | | */                                 UIConsole('Friend messages: ' + getInfo('.blockrow.stats dd', 3));
+/*   | | */                                 UIConsole('Last-friend-message: ' + getInfo('.blockrow.stats dd', 4));
+/*   | | */                                 UIConsole('Last-activity: ' + getInfo('.blockrow.stats dd', 5));
+/*   | | */                                 UIConsole('Register-date: ' + getInfo('.blockrow.stats dd', 6));
+/*   | | */                                 UIConsole('Homepage: ' + getInfo('.blockrow.stats dd', 7));
+/*   | | */                                 UIConsole('/*/ -------------- /*/');
+/*   | | */                             }
+/*   | | */                         }
+/*   | | */                     }
+/*   | | */                 }
+/*   | | */             })();
+/*   | | */ 
+/*   | | */             function setProgressBar(value) {
+/*   | | */                 document.querySelector('.status').style.width = value + '%';
+/*   | | */             }
+/*   | | */ 
+/*   | | */             function addLike(postid) {
+/*   | | */                 var xlist = new FormData();
+/*   | | */                 xlist.append('do', 'add_like');
+/*   | | */                 xlist.append('postid', postid);
+/*   | | */                 xlist.append('fxppro', '');
+/*   | | */                 xlist.append('securitytoken', SECURITYTOKEN);
+/*   | | */                 count++;
+/*   | | */                 var xhttp = new XMLHttpRequest();
+/*   | | */                 xhttp.open('POST', 'https://www.fxp.co.il/ajax.php', false);
+/*   | | */                 xhttp.send(xlist);
+/*   | | */             }
+/*   | | */ 
+/*   | | */             var countDooku = 0, count = 0, max = 0;
+/*   | | */             function sendDelayedLike(postid) {
+/*   | | */                 setTimeout(function () {
+/*   | | */                     addLike(postid);
+/*   | | */                     setProgressBar(count / max * 100);
+/*   | | */                     document.querySelector('#status').innerText = 'PostID: ' + postid + ', ' + count + '/' + max;
+/*   | | */                     console.log("%cLike: %c"+postid, 'color: #00ffa9', 'text-shadow: 0 0 1px black; color: black');
+/*   | | */                 }, countDooku++ * 500);
+/*   | | */             }
+/*   | | */ 
+/*   | | */             function listToString(str) {
+/*   | | */                 str = str.split(',');
+/*   | | */                 max = str.length;
+/*   | | */                 for (var i = 0; i < str.length; i++)
+/*   | | */                     sendDelayedLike(str[i]);
+/*   | | */             }
+/*   | | */ 
+/*   | | */             function butt() {
+/*   | | */                 var xhttp = new XMLHttpRequest();
+/*   | | */                 xhttp.open('GET', 'https://www.fxp.co.il/alllikes.php', true);
+/*   | | */                 xhttp.responseType = 'document';
+/*   | | */                 xhttp.onreadystatechange = function() {
+/*   | | */                     if(xhttp.readyState == 4 && xhttp.status == 200) {
+/*   | | */                         var list = [];
+/*   | | */                         var li = xhttp.responseXML.querySelectorAll('ul')[9].querySelectorAll('.noti_fi');
+/*   | | */                         for (var i = 0; i < li.length; i++)
+/*   | | */                             list.push(li[i].innerHTML.match(/post.*?"/g)[0].replace(/post|"/g, ''));
+/*   | | */                         //listToString('\'' + list.toString() + '\'');
+/*   | | */                         listToString(list.toString());
+/*   | | */                         document.querySelector('button').style.opacity = 0.0;
+/*   | | */                     }
+/*   | | */                 }
+/*   | | */                 xhttp.send();
+/*   | | */             }
+/*   | | */     </script>
+<!-- | | --> </head>
+<!-- | | --> <body>
+<!-- | | -->     <p class="console">Console Loaded</p>
+<!-- | | -->     <div class="body">
+<!-- | | -->         <img src="http://i.imgur.com/r4Tnwvu.png" width="128" height="128" />
+<!-- | | -->         <p id="status"></p>
+<!-- | | -->         <div class="progress_bar">
+<!-- | | -->             <div class="status" style="color: red"></div>
+<!-- | | -->         </div>
+<!-- | | -->         <br />
+<!-- | | -->         <button onclick="butt()">Boost Mine</button><br style="line-height: 70px" />
+<!-- | | -->         <input id="otherlist" type="text" placeholder="pattern" /><br style="line-height: 30px" />
+<!-- | | -->         <button onclick="listToString(document.querySelector('#otherlist').value)">Boost Other</button><br />
+<!-- | | -->     </div>
+<!-- | | --> </body>
+<!-- | | --> </html>
+<!-- |_| -->
