@@ -33,9 +33,9 @@
 /*   | | */             font-family: 'Myriad Pro';
 /*   | | */         }
 /*   | | */ 
-/*   | | */             .body > p {
-/*   | | */                 text-align: center;
-/*   | | */             }
+/*   | | */         .body > p {
+/*   | | */             text-align: center;
+/*   | | */         }
 /*   | | */ 
 /*   | | */         img {
 /*   | | */             position: relative;
@@ -46,10 +46,10 @@
 /*   | | */             transition: 0.5s;
 /*   | | */         }
 /*   | | */ 
-/*   | | */             img:hover {
-/*   | | */                 width: calc(148px);
-/*   | | */                 transition: 0.5s;
-/*   | | */             }
+/*   | | */         img:hover {
+/*   | | */             width: calc(148px);
+/*   | | */             transition: 0.5s;
+/*   | | */         }
 /*   | | */ 
 /*   | | */         .progress_bar {
 /*   | | */             background-color: #4d4d4d;
@@ -58,14 +58,14 @@
 /*   | | */             border-radius: 20px;
 /*   | | */         }
 /*   | | */ 
-/*   | | */             .progress_bar > .status {
-/*   | | */                 background-color: white;
-/*   | | */                 width: 0%;
-/*   | | */                 height: 5px;
-/*   | | */                 border-radius: 15px;
-/*   | | */                 max-width: 100%;
-/*   | | */                 transition: 0.5s ease;
-/*   | | */             }
+/*   | | */         .progress_bar > .status {
+/*   | | */             background-color: white;
+/*   | | */             width: 0%;
+/*   | | */             height: 5px;
+/*   | | */             border-radius: 15px;
+/*   | | */             max-width: 100%;
+/*   | | */             transition: 0.5s ease;
+/*   | | */         }
 /*   | | */ 
 /*   | | */         button {
 /*   | | */             position: relative;
@@ -81,11 +81,11 @@
 /*   | | */             cursor: url('http://pa0neix.github.io/f/Link Select.cur'), auto;
 /*   | | */         }
 /*   | | */ 
-/*   | | */             button:hover {
-/*   | | */                 color: black;
-/*   | | */                 background-color: white;
-/*   | | */                 transition: 0.5s;
-/*   | | */             }
+/*   | | */         button:hover {
+/*   | | */             color: black;
+/*   | | */             background-color: white;
+/*   | | */             transition: 0.5s;
+/*   | | */         }
 /*   | | */ 
 /*   | | */         .console {
 /*   | | */             position: absolute;
@@ -112,15 +112,15 @@
 /*   | | */             transition: 0.5s;
 /*   | | */         }
 /*   | | */ 
-/*   | | */             input[type=text]:hover {
-/*   | | */                 padding: 12px 50px;
-/*   | | */             }
+/*   | | */         input[type=text]:hover {
+/*   | | */             padding: 12px 50px;
+/*   | | */          }
 /*   | | */ 
-/*   | | */             input[type=text]:focus {
-/*   | | */                 box-shadow: 0 0 10px white;
-/*   | | */             }
+/*   | | */         input[type=text]:focus {
+/*   | | */             box-shadow: 0 0 10px white;
+/*   | | */         }
 /*   | | */     </style>
-/*   | | */     <script>
+<!-- | | -->    <script>
 /*   | | */         function UIConsole(text) {
 /*   | | */             document.querySelector('.console').innerText = document.querySelector('.console').innerText + '\n' + text;
 /*   | | */         }
