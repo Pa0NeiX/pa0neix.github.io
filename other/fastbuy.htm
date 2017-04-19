@@ -1,0 +1,152 @@
+<html>
+<head>
+<title>CS:GO FastBuy- by pnx</title>
+</head>
+<body>
+  <style>
+    body {
+      font-family: monospace;
+    }
+    ::selection {
+      background: red;
+    }
+    .selectors {
+      width:200px;
+      height: 50%;
+      display: grid;
+      overflow: scroll;
+    }
+    .priorityList {
+      position: absolute;
+      top: 8px;
+      left: 215px;
+    }
+    .result {
+      width: 50%;
+      height: 20%;
+    }
+  </style>
+<script>
+var weapons = [
+  'p228',
+  'glock',
+  'scout',
+  'xm1014',
+  'mac10',
+  'aug',
+  'elite',
+  'fiveseven',
+  'ump45',
+  'sg550',
+  'galil',
+  'galilar',
+  'famas',
+  'usp_silencer',
+  'awp',
+  'mp5navy',
+  'm249',
+  'nova',
+  'm4a1',
+  'm4a1_silencer',
+  'tmp',
+  'g3sg1',
+  'deagle',
+  'sg552',
+  'ak47',
+  'p90',
+  'bizon',
+  'mag7',
+  'negev',
+  'sawedoff',
+  'tec9',
+  'taser',
+  'hkp2000',
+  'mp7',
+  'mp9',
+  'nova',
+  'p250',
+  'scar17',
+  'scar20',
+  'sg556',
+  'ssg08',
+  'flashbang',
+  'smokegrenade',
+  'hegrenade',
+  'molotov',
+  'decoy',
+  'primammo',
+  'secammo'
+];
+window.addEventListener('load', function() {
+  weapons.forEach(function(e,i) {
+    var x = document.createElement('label');
+    x.innerHTML = '<input class="item" id="'+e+'" type="checkbox" /> ' + e;
+    document.querySelector('.selectors').append(x);
+  });
+
+  document.querySelectorAll('input[type="checkbox"]').forEach(function(e,i) {
+    e.addEventListener('change', function() {
+      build(); // update textarea
+      if(e.checked) {
+          var x = document.createElement('option');
+          x.innerText = e.id;
+          document.querySelector('#priority').append(x);
+        } else {
+          var x = document.querySelector('#priority').querySelectorAll('option');
+          for(var j = 0; j < x.length; j++) {
+            if(x[j].innerText == e.id) {
+              x[j].remove();
+              break;
+            }
+          }
+        }
+        document.querySelector('#priority').style.height = document.querySelector('.selectors').offsetHeight + 'px';
+        //document.querySelector('#priority').size = document.querySelector('#priority').querySelectorAll('option').length;
+    });
+  });
+
+  document.querySelectorAll('#priority').forEach(function(e,i) {
+    build(); // update textarea
+  });
+});
+function move(sides) {
+  if(!document.querySelector('#priority').querySelector('option:checked'))
+    return;
+  var x = document.querySelector('#priority').querySelector('option:checked');
+  switch (sides) {
+    case 'up':
+      var y = x.previousSibling;
+      if(y == null)
+        break;
+      x = x.parentNode.removeChild(x);
+      document.querySelector('#priority').insertBefore(x,y);
+      build(); // update textarea
+      break;
+    case 'down':
+      var y = x.nextSibling;
+      if(y == null)
+        break;
+      x = x.parentNode.removeChild(x);
+      document.querySelector('#priority').insertBefore(x,y.nextSibling);
+      build(); // update textarea
+  }
+}
+function build() {
+  var x = 'bind "F3" "';
+  document.querySelector('#priority').querySelectorAll('option').forEach(function(e,i) {
+    x+='buy '+e.innerText+';';
+  });
+  document.querySelector('#output').value = x+='"';
+}
+</script>
+<div class="selectors"></div><br/>
+<div class="priorityList">
+  <select id="priority" size="17"></select><br/>
+  <button onclick="move('up')">+</button><button onclick="move('down')">-</button>
+</div>
+<br/>
+<!--<button onclick="build()">Generate</button><br/>-->
+<textarea id="output" placeholder="output (config)" class="result" onclick="this.select()"></textarea>
+<br/><code>Created by pnx &#60;<a href="mailto:pa0neix@gmail.com">pa0neix@gmail.com</a>&#62; (<a href="https://steamcommunity.com/id/pa0neix">Steam</a>).</code>
+</body>
+</html>
