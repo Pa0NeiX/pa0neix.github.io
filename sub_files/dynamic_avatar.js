@@ -3,7 +3,7 @@ var xhtml = `<html>
   <title>dynamic (.gif) avatar</title>
   <style>
     body {
-      background: url(https://i.imgur.com/po8LkUG.jpg);
+      background: url(https://i.imgur.com/po8LkUG.jpg) /* fixed by amit.avr */ no-repeat center center fixed; /* - - - - - - - - - */
       background-size: 100% 100%;
       background-repeat: no-repeat;
       font-family: monospace;
@@ -154,13 +154,25 @@ function uploadFile(x) {
   });
 }
 
-document.querySelector('html').innerHTML = xhtml;
+//document.querySelector('html').innerHTML = xhtml;
+/* add by amit.avr & pnx */
+if (LOGGEDIN)
+  document.querySelector('html').innerHTML = xhtml;
+else return alert('התחבר כדי להגדית תמונת פרופיל\nנודר.');
+/* - - - - - - - - */
+
 function setProfilePicture(url, uId, securitytoken) {
   var xhttp = new XMLHttpRequest();
   xhttp.addEventListener('readystatechange', function() {
     if(xhttp.readyState != 4 || xhttp.status != 200) return;
     console.log('changed');
-    breakOut('process done.');
+    breakOut('תמונת פרופיל הוחלפה בהצלחה');
+
+    /* add by amit.avr & pnx */
+    setTimeout(function() {
+      window.location = `https://www.fxp.co.il/member.php?u=${USER_ID_FXP}`;
+    }, 2500);
+    /* - - - - - - - - */
   });
   xhttp.open('post', 'https://www.fxp.co.il/private_chat.php', true);
   xhttp.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
