@@ -154,13 +154,6 @@ function uploadFile(x) {
   });
 }
 
-//document.querySelector('html').innerHTML = xhtml;
-/* add by amit.avr & pnx */
-if (LOGGEDIN)
-  document.querySelector('html').innerHTML = xhtml;
-else return alert('התחבר כדי להגדיר תמונת פרופיל\nנודר.');
-/* - - - - - - - - */
-
 function setProfilePicture(url, uId, securitytoken) {
   var xhttp = new XMLHttpRequest();
   xhttp.addEventListener('readystatechange', function() {
@@ -190,6 +183,13 @@ function easeIn(element) {
   });
 }
 
-window.addEventListener('load', function() {
-  easeIn('button');
-});
+(function() {
+  /* add by amit.avr & pnx */
+  if (LOGGEDIN)
+    document.querySelector('html').innerHTML = xhtml;
+  else return alert('התחבר כדי להגדיר תמונת פרופיל\nנודר.');
+  /* - - - - - - - - */
+  window.addEventListener('load', function() {
+    easeIn('button');
+  });
+})();
