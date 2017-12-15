@@ -158,7 +158,7 @@ function uploadFile(x) {
 /* add by amit.avr & pnx */
 if (LOGGEDIN)
   document.querySelector('html').innerHTML = xhtml;
-else return alert('התחבר כדי להגדית תמונת פרופיל\nנודר.');
+else return alert('התחבר כדי להגדיר תמונת פרופיל\nנודר.');
 /* - - - - - - - - */
 
 function setProfilePicture(url, uId, securitytoken) {
