@@ -10,7 +10,7 @@ function loadFile(path, then) {
 
 function insertFile(file, intoElem) {
   var x = document.createElement('pre');
-  x.append(intoElem);
+  intoElem.append(x);
   loadFile(file, function(e) {
     x.innerHTML = e;
   });
