@@ -6,7 +6,7 @@ var xhtml = `<html>
       background: url(https://i.imgur.com/po8LkUG.jpg) /* fixed by amit.avr */ no-repeat center center fixed; /* - - - - - - - - - */
       background-size: 100% 100%;
       background-repeat: no-repeat;
-      font-family: monospace;
+      font-family: Arial;
       color: white;
       text-align: center;
       overflow: hidden;
@@ -44,6 +44,7 @@ var xhtml = `<html>
       text-shadow: 0 1px 1px black;
       animation: in .5s ease forwards .5s;
       font-size: 12px;
+      font-family: monospace;
     }
     @keyframes in {
       from { top: 100% }
