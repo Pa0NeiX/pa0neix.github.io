@@ -1,0 +1,8 @@
+Origin: pnx Public Repository
+Label: pnx repo
+Suite: stable
+Version: 0.1
+Codename: pnx
+Architectures: iphoneos-arm
+Components: main
+Description: pnx public repo, full of shit
