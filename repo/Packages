@@ -1,12 +1,30 @@
+Package: com.pnx.kesepplus
+Version: 0.0
+Architecture: iphoneos-arm
+Maintainer: pnx <pa0neix@gmail.com>
+Filename: ./repo/debs/com.pnx.kesepplus_0.0_iphoneos-arm.deb
+Size: 784
+MD5sum: 49e197b1cf13924483c7c84cfff39b44
+SHA1: f481bda9c72bcc74ffc836cf38d2b426c7bc618a
+SHA256: b8167bed6d2e006b11a860e7f838d1c3b8906c7e599a80bdf5b62aae37ef8fbb
+Section: Tweaks
+Priority: optional
+Homepage: https://www.pa0neix.github.io/
+Description: suka
+Tag: purpose::console
+Author: pnx (Pa0NeiX) <pa0neix@gmail.com>
+Depiction: https://www.pa0neix.github.io/
+Name: KesepPlus
+
 Package: com.pnx.mizrahit
 Version: 0.0
 Architecture: iphoneos-arm
 Maintainer: pnx <pa0neix@gmail.com>
-Filename: ./debs/Mizrahit.deb
-Size: 811972
-MD5sum: e26047cbc63d37f99ba4c00882cc3fd8
-SHA1: 17da84c2533c8f8aefd5a02318417b988c230943
-SHA256: 288d3de94e75f3afabb2556bc6ebf39fca8a98c96475a2d88ad9b12748c04016
+Filename: ./repo/debs/com.pnx.mizrahit_0.0_iphoneos-arm.deb
+Size: 811308
+MD5sum: 98fbe98af47e748b8584a110bf83c714
+SHA1: d909a2dfe7d7ad25c9606131c932afe54f0f10c8
+SHA256: 8de361fe36b11076a50887900beb678565b6778d1987af63ae384186310ca8cd
 Section: Ringtones
 Priority: optional
 Homepage: https://www.pa0neix.github.io/
