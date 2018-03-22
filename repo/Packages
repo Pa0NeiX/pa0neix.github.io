@@ -2,11 +2,11 @@ Package: com.pnx.kesepplus
 Version: 0.0
 Architecture: iphoneos-arm
 Maintainer: pnx <pa0neix@gmail.com>
-Filename: ./repo/debs/com.pnx.kesepplus_0.0_iphoneos-arm.deb
+Filename: ./debs/com.pnx.kesepplus_0.0_iphoneos-arm.deb
 Size: 784
-MD5sum: 49e197b1cf13924483c7c84cfff39b44
-SHA1: f481bda9c72bcc74ffc836cf38d2b426c7bc618a
-SHA256: b8167bed6d2e006b11a860e7f838d1c3b8906c7e599a80bdf5b62aae37ef8fbb
+MD5sum: fc24eb5cf27e3924bb871fae4650959f
+SHA1: 5170a15eb1346e5dc87242fc15788fed1aed108a
+SHA256: caccb9d0846457c0588f6f2090a915f9e819bfd3e8f6a73b8f4ffdccedf1539a
 Section: Tweaks
 Priority: optional
 Homepage: https://www.pa0neix.github.io/
@@ -20,11 +20,11 @@ Package: com.pnx.mizrahit
 Version: 0.0
 Architecture: iphoneos-arm
 Maintainer: pnx <pa0neix@gmail.com>
-Filename: ./repo/debs/com.pnx.mizrahit_0.0_iphoneos-arm.deb
+Filename: ./debs/com.pnx.mizrahit_0.0_iphoneos-arm.deb
 Size: 811308
-MD5sum: 98fbe98af47e748b8584a110bf83c714
-SHA1: d909a2dfe7d7ad25c9606131c932afe54f0f10c8
-SHA256: 8de361fe36b11076a50887900beb678565b6778d1987af63ae384186310ca8cd
+MD5sum: 1c0a4b3ccd706d6fe2db3388a05fd54f
+SHA1: 0b9c0bee631933d76f2c06b8cd406f4624fe8ee4
+SHA256: 566eea96586971be83bb578bf3b46675abea599a78cba2462b3b0d96157940b7
 Section: Ringtones
 Priority: optional
 Homepage: https://www.pa0neix.github.io/
