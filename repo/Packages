@@ -2,15 +2,15 @@ Package: com.pnx.mizrahit
 Version: 0.0
 Architecture: iphoneos-arm
 Maintainer: pnx <pa0neix@gmail.com>
-Filename: ./debs/com.pnx.mizrahit_0.0_iphoneos-arm.deb
-Size: 811960
-MD5sum: b25a6dbbe121b57161d6c8dea67eef0b
-SHA1: a6e4302da71ebd715858913476d35d2d08c4bd23
-SHA256: 800282989132e070f3673125ffe632d545732163554db71dff7c025ca36d6dad
+Filename: ./debs/Mizrahit.deb
+Size: 811972
+MD5sum: e26047cbc63d37f99ba4c00882cc3fd8
+SHA1: 17da84c2533c8f8aefd5a02318417b988c230943
+SHA256: 288d3de94e75f3afabb2556bc6ebf39fca8a98c96475a2d88ad9b12748c04016
 Section: Ringtones
 Priority: optional
 Homepage: https://www.pa0neix.github.io/
 Description: אושר כהן ‫-‬ עיר תחתית ‫(‬בית ראשון ‫+‬ בית שני‫)‬
 Author: pnx (Pa0NeiX) <pa0neix@gmail.com>
-Name: KesepPlus
+Name: צלצולים במזרחית
 
